@@ -1,0 +1,162 @@
+### Asset
+- GET /api/v2/assets - Get Assets
+- GET /api/v2/assets/aliases - Get Asset Aliases
+- GET /api/v2/assets/aliases/{asset_alias_id} - Get Asset Alias
+- GET /api/v2/assets/events - Get Asset Events
+- POST /api/v2/assets/events - Create Asset Event
+- POST /api/v2/assets/{asset_id}/materialize - Materialize Asset
+- GET /api/v2/assets/{asset_id}/queuedEvents - Get Asset Queued Events
+- DELETE /api/v2/assets/{asset_id}/queuedEvents - Delete Asset Queued Events
+- GET /api/v2/assets/{asset_id} - Get Asset
+- GET /api/v2/dags/{dag_id}/assets/queuedEvents - Get Dag Asset Queued Events
+- DELETE /api/v2/dags/{dag_id}/assets/queuedEvents - Delete Dag Asset Queued Events
+- GET /api/v2/dags/{dag_id}/assets/{asset_id}/queuedEvents - Get Dag Asset Queued Event
+- DELETE /api/v2/dags/{dag_id}/assets/{asset_id}/queuedEvents - Delete Dag Asset Queued Event
+
+### Backfill
+- GET /api/v2/backfills - List Backfills
+- POST /api/v2/backfills - Create Backfill
+- GET /api/v2/backfills/{backfill_id} - Get Backfill
+- PUT /api/v2/backfills/{backfill_id}/pause - Pause Backfill
+- PUT /api/v2/backfills/{backfill_id}/unpause - Unpause Backfill
+- PUT /api/v2/backfills/{backfill_id}/cancel - Cancel Backfill
+- POST /api/v2/backfills/dry_run - Create Backfill Dry Run
+
+### Connection
+- DELETE /api/v2/connections/{connection_id} - Delete Connection
+- GET /api/v2/connections/{connection_id} - Get Connection
+- PATCH /api/v2/connections/{connection_id} - Patch Connection
+- GET /api/v2/connections - Get Connections
+- POST /api/v2/connections - Post Connection
+- PATCH /api/v2/connections - Bulk Connections
+- POST /api/v2/connections/test - Test Connection
+- POST /api/v2/connections/defaults - Create Default Connections
+
+### DagRun
+- GET /api/v2/dags/{dag_id}/dagRuns/{dag_run_id} - Get Dag Run
+- DELETE /api/v2/dags/{dag_id}/dagRuns/{dag_run_id} - Delete Dag Run
+- PATCH /api/v2/dags/{dag_id}/dagRuns/{dag_run_id} - Patch Dag Run
+- GET /api/v2/dags/{dag_id}/dagRuns/{dag_run_id}/upstreamAssetEvents - Get Upstream Asset Events
+- POST /api/v2/dags/{dag_id}/dagRuns/{dag_run_id}/clear - Clear Dag Run
+- GET /api/v2/dags/{dag_id}/dagRuns - Get Dag Runs
+- POST /api/v2/dags/{dag_id}/dagRuns - Trigger Dag Run
+- GET /api/v2/dags/{dag_id}/dagRuns/{dag_run_id}/wait - Experimental: Wait for a dag run to complete, and return task results if requested.
+- POST /api/v2/dags/{dag_id}/dagRuns/list - Get List Dag Runs Batch
+
+### experimental
+- GET /api/v2/dags/{dag_id}/dagRuns/{dag_run_id}/wait - Experimental: Wait for a dag run to complete, and return task results if requested.
+
+### DagSource
+- GET /api/v2/dagSources/{dag_id} - Get Dag Source
+
+### DagStats
+- GET /api/v2/dagStats - Get Dag Stats
+
+### Config
+- GET /api/v2/config - Get Config
+- GET /api/v2/config/section/{section}/option/{option} - Get Config Value
+
+### DagWarning
+- GET /api/v2/dagWarnings - List Dag Warnings
+
+### DAG
+- GET /api/v2/dags - Get Dags
+- PATCH /api/v2/dags - Patch Dags
+- GET /api/v2/dags/{dag_id} - Get Dag
+- PATCH /api/v2/dags/{dag_id} - Patch Dag
+- DELETE /api/v2/dags/{dag_id} - Delete Dag
+- GET /api/v2/dags/{dag_id}/details - Get Dag Details
+- POST /api/v2/dags/{dag_id}/favorite - Favorite Dag
+- POST /api/v2/dags/{dag_id}/unfavorite - Unfavorite Dag
+- GET /api/v2/dagTags - Get Dag Tags
+
+### Event Log
+- GET /api/v2/eventLogs/{event_log_id} - Get Event Log
+- GET /api/v2/eventLogs - Get Event Logs
+
+### Extra Links
+- GET /api/v2/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}/links - Get Extra Links
+
+### Task Instance
+- GET /api/v2/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}/links - Get Extra Links
+- GET /api/v2/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id} - Get Task Instance
+- PATCH /api/v2/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id} - Patch Task Instance
+- DELETE /api/v2/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id} - Delete Task Instance
+- GET /api/v2/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}/listMapped - Get Mapped Task Instances
+- GET /api/v2/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}/{map_index}/dependencies - Get Task Instance Dependencies
+- GET /api/v2/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}/dependencies - Get Task Instance Dependencies
+- GET /api/v2/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}/tries - Get Task Instance Tries
+- GET /api/v2/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}/{map_index}/tries - Get Mapped Task Instance Tries
+- GET /api/v2/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}/{map_index} - Get Mapped Task Instance
+- PATCH /api/v2/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}/{map_index} - Patch Task Instance
+- GET /api/v2/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances - Get Task Instances
+- PATCH /api/v2/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances - Bulk Task Instances
+- POST /api/v2/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/list - Get Task Instances Batch
+- GET /api/v2/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}/tries/{task_try_number} - Get Task Instance Try Details
+- GET /api/v2/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}/{map_index}/tries/{task_try_number} - Get Mapped Task Instance Try Details
+- POST /api/v2/dags/{dag_id}/clearTaskInstances - Post Clear Task Instances
+- PATCH /api/v2/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}/{map_index}/dry_run - Patch Task Instance Dry Run
+- PATCH /api/v2/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}/dry_run - Patch Task Instance Dry Run
+- GET /api/v2/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}/logs/{try_number} - Get Log
+- GET /api/v2/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}/externalLogUrl/{try_number} - Get External Log Url
+- PATCH /api/v2/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}/{map_index}/hitlDetails - Update Hitl Detail
+- GET /api/v2/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}/{map_index}/hitlDetails - Get Hitl Detail
+- GET /api/v2/dags/{dag_id}/dagRuns/{dag_run_id}/hitlDetails - Get Hitl Details
+
+### Import Error
+- GET /api/v2/importErrors/{import_error_id} - Get Import Error
+- GET /api/v2/importErrors - Get Import Errors
+
+### Job
+- GET /api/v2/jobs - Get Jobs
+
+### Plugin
+- GET /api/v2/plugins - Get Plugins
+- GET /api/v2/plugins/importErrors - Import Errors
+
+### Pool
+- DELETE /api/v2/pools/{pool_name} - Delete Pool
+- GET /api/v2/pools/{pool_name} - Get Pool
+- PATCH /api/v2/pools/{pool_name} - Patch Pool
+- GET /api/v2/pools - Get Pools
+- POST /api/v2/pools - Post Pool
+- PATCH /api/v2/pools - Bulk Pools
+
+### Provider
+- GET /api/v2/providers - Get Providers
+
+### XCom
+- GET /api/v2/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}/xcomEntries/{xcom_key} - Get Xcom Entry
+- PATCH /api/v2/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}/xcomEntries/{xcom_key} - Update Xcom Entry
+- GET /api/v2/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}/xcomEntries - Get Xcom Entries
+- POST /api/v2/dags/{dag_id}/dagRuns/{dag_run_id}/taskInstances/{task_id}/xcomEntries - Create Xcom Entry
+
+### Task
+- GET /api/v2/dags/{dag_id}/tasks - Get Tasks
+- GET /api/v2/dags/{dag_id}/tasks/{task_id} - Get Task
+
+### Variable
+- DELETE /api/v2/variables/{variable_key} - Delete Variable
+- GET /api/v2/variables/{variable_key} - Get Variable
+- PATCH /api/v2/variables/{variable_key} - Patch Variable
+- GET /api/v2/variables - Get Variables
+- POST /api/v2/variables - Post Variable
+- PATCH /api/v2/variables - Bulk Variables
+
+### DAG Parsing
+- PUT /api/v2/parseDagFile/{file_token} - Reparse Dag File
+
+### DagVersion
+- GET /api/v2/dags/{dag_id}/dagVersions/{version_number} - Get Dag Version
+- GET /api/v2/dags/{dag_id}/dagVersions - Get Dag Versions
+
+### Monitor
+- GET /api/v2/monitor/health - Get Health
+
+### Version
+- GET /api/v2/version - Get Version
+
+### Login
+- GET /api/v2/auth/login - Login
+- GET /api/v2/auth/logout - Logout
+

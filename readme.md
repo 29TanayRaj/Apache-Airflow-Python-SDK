@@ -101,7 +101,7 @@ airflow webserver restart
 airflow scheduler restart
 ```
 
-> **Tip:** For Airflow running via Docker Compose, set the environment variable `AIRFLOW__API__AUTH_BACKENDS=airflow.api.auth.backend.basic_auth`.
+> **Tip:** For Airflow running via Docker Compose, set the environment variable `AIRFLOW__CORE__AUTH_MANAGER: airflow.providers.fab.auth_manager.fab_auth_manager.FabAuthManager`.
 
 ---
 
@@ -133,11 +133,6 @@ with AirflowSDK(
         conf={"key": "value"}
     )
     print(f"Triggered run: {run.dag_run_id} | state: {run.state}")
-
-    # Manage Variables
-    client.variables.create(request=VariableCreateRequest(key="env", value="production"))
-    var = client.variables.get("env")
-    print(var.value)
 ```
 
 You can also use the SDK without a context manager; just call `.close()` when done:
